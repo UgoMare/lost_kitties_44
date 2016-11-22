@@ -1,0 +1,7 @@
+    <%= simple_form_for @pet do |f| %>
+    <%= f.input :name, placeholder: 'Boby' %>
+    <%= f.input :category, as: :select, collection: Pet::CATEGORIES, placeholder: 'select a category' %>
+    <%= f.input :age, placeholder: '10' %>
+    <%= f.input :found_at, as: :string, input_html: { class: 'datepicker' } %>
+    <%= f.submit class: 'btn btn-primary' %>
+    <% end %>

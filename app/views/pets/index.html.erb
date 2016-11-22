@@ -1,0 +1,20 @@
+<div class="row">
+
+  <h2 class='text-center'>Have you seen a pet ?</h2>
+
+  <div class="col-md-6 col-md-offset-3">
+    <ol>
+      <% @pets.each do |pet| %>
+      <li>
+        <b><%= link_to pet.name, pet_path(pet) %></b>
+        (<%= pet.category %>)
+        <%= link_to 'edit', edit_pet_path(pet), class: 'btn btn-primary' %>
+        <%= link_to 'x', pet_path(pet), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+      </li>
+      <% end %>
+    </ol>
+
+    <br>
+    <%= link_to 'You found a pet?', new_pet_path %>
+  </div>
+</div>
